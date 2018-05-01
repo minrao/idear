@@ -49,9 +49,12 @@ class PatternBasedNlpProvider : NlpProvider {
     override fun processUtterance(u: String) {
         when {
             u == HI_IDEA -> TTSService.say("Hi, again!")
-            u == BOOKMARK -> TTSService.say("bookmark created")
-            u == GOTOBOOKMARK -> invokeAction("GotoBookmark")
-            u == READ -> invokeAction("readPage")
+            u == BOOKMARK -> IDEService.type(VK_CONTROL, VK_F11) && IDEService.type(c) && MaryTTS.say("Bookmark" + c + "created")
+            u == GOTOBOOKMARK -> IDEService.type(VK_SHIFT, VK_F11)
+            u == READ -> IDEService.type(VK_SHIFT, VK_F11) && IDEService.invokeAction("goto line")
+            u.endsWith("read from bookmark") -> IDEService.invokeAction("goto line") && MaryTTS.readLine()
+            u.endsWith("read from line") -> IDEService.invokeAction("goto line") && MaryTTS.readLine()
+            u.endsWith("build plugin") -> IDEService.type(VK_SHIFT, VK_F10) && MaryTTS.readLine()
             u.startsWith(OPEN) -> routineOpen(u)
             u.startsWith(NAVIGATE) -> invokeAction("GotoDeclaration")
             u.startsWith(EXECUTE) -> invokeAction("Run")
