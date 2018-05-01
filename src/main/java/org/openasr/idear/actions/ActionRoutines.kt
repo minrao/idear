@@ -41,9 +41,9 @@ object ActionRoutines {
 
     fun routineOfLine(c: String) {
         if (c.startsWith("beginning")) {
-            IDEService.type(VK_META, VK_LEFT)
+            IDEService.type(META_MASK, VK_LEFT)
         } else if (c.startsWith("end")) {
-            IDEService.type(VK_META, VK_RIGHT)
+            IDEService.type(META_MASK, VK_RIGHT)
         }
     }
 
@@ -166,12 +166,29 @@ object ActionRoutines {
             IDEService.type(VK_ENTER)
         })
     }
-
     fun routineOpen(c: String) {
         when {
             c.endsWith(Commands.SETTINGS) -> IDEService.invokeAction(ACTION_SHOW_SETTINGS)
             c.endsWith(Commands.RECENT) -> IDEService.invokeAction(ACTION_RECENT_FILES)
             c.endsWith(Commands.TERMINAL) -> IDEService.invokeAction("ActivateTerminalToolWindow")
+        }
+    }
+    fun routineBookmark(c: String) {
+
+        when {
+            c.endsWith("bookmark") -> IDEService.Bookmark(c)
+        }
+    }
+    fun routineBuild(c: String) {
+
+        when {
+            c.endsWith("build plugin") -> IDEService.buildUpdates(c)
+        }
+    }
+    fun routineRead(c: String) {
+        when {
+            c.endsWith("read from bookmrk") -> IDEService.readFromBookmark(c)
+
         }
     }
 
