@@ -8,6 +8,9 @@
     "execute              TODO: how does this work?",
     "expand",
     "expand selection",
-    "shrink"
+    "shrink",
+    "create bookmark",
+    "build plugin",
+    "read page"
   ]
 }
