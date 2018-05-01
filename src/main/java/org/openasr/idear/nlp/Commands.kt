@@ -34,4 +34,9 @@ object Commands {
     val EXECUTE = "execute"
     val GOTO = "goto line"
     val SHOW_USAGES = "show usages"
+    val BOOKMARK = "create bookmark"
+    val GOTOBOOKMARK = "go to bookmark"
+    val READ = "read page"
+    val TREEVIEW = "read in tree view"
+    val BUILD = "build plugin"
 }
