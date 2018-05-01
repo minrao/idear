@@ -9,7 +9,9 @@ grammar dialog;
 <menu_item> = settings | recent | terminal;
 
 <init_command> = hi idea;
-
+<book_command> = create bookmark;
+<gotobook_command> = go to bookmark;
+<read_command> = read page;
 <activation_command> = (okay | ok) idea;
 
 <goto_command>  = goto line <number>;
