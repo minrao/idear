@@ -7,7 +7,8 @@ import com.intellij.openapi.fileEditor.FileEditorManager
 import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.ui.playback.commands.ActionCommand
 import com.intellij.openapi.util.ActionCallback
-
+import java.awt.Robot
+import java.awt.event.KeyEvent.*
 object IDEService {
     /**
      * @param actionId - see [com.intellij.openapi.actionSystem.IdeActions]
