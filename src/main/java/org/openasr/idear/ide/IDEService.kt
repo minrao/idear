@@ -9,6 +9,7 @@ import com.intellij.openapi.ui.playback.commands.ActionCommand
 import com.intellij.openapi.util.ActionCallback
 import java.awt.Robot
 import java.awt.event.KeyEvent.*
+import marytts.*
 object IDEService {
     /**
      * @param actionId - see [com.intellij.openapi.actionSystem.IdeActions]
